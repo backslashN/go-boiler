@@ -28,6 +28,10 @@ build: clean ## Build the project locally
 	@go build -o $(BIN) $(SRC_DIR)/*.go
 	@ls -la $(BIN)
 
+.PHONY: test
+test: ## Run all test targets
+	@go test ./...
+
 .PHONY: run
 run: ## Run the main build target locally
 	@go run ./$(SRC_DIR)/
